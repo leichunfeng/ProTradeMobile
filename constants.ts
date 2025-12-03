@@ -1,4 +1,4 @@
-import { IndexData, SectorData, StockData } from './types';
+import { IndexData } from './types';
 
 // Mock Indices
 export const MOCK_INDICES: IndexData[] = [

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MOCK_INDICES } from '../constants';
 import { PercentChange, PriceDisplay } from '../components/Formatters';
-import { ArrowUpRight, ArrowDownRight, Activity, BarChart2, Thermometer, ChevronDown, ChevronUp, CircleDollarSign, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, ArrowDownRight, Activity, BarChart2, Thermometer, ChevronDown, ChevronUp, CircleDollarSign } from 'lucide-react';
 
 const MarketTab: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -3,7 +3,14 @@ import React from 'react';
 export const PercentChange: React.FC<{ value: number; className?: string }> = ({ value, className = '' }) => {
   const isUp = value > 0;
   const isZero = value === 0;
-  const colorClass = isUp ? 'text-trade-up' : isZero ? 'text-trade-muted' : 'text-trade-down';
+  
+  let colorClass = 'text-trade-down';
+  if (isUp) {
+    colorClass = 'text-trade-up';
+  } else if (isZero) {
+    colorClass = 'text-trade-muted';
+  }
+
   const sign = isUp ? '+' : '';
   
   return (
@@ -15,8 +22,15 @@ export const PercentChange: React.FC<{ value: number; className?: string }> = ({
 
 export const PriceDisplay: React.FC<{ value: number; className?: string; color?: boolean; change?: number }> = ({ value, className = '', color = false, change = 0 }) => {
     let colorClass = 'text-trade-text';
+    
     if (color) {
-        colorClass = change > 0 ? 'text-trade-up' : change === 0 ? 'text-trade-muted' : 'text-trade-down';
+        if (change > 0) {
+            colorClass = 'text-trade-up';
+        } else if (change === 0) {
+            colorClass = 'text-trade-muted';
+        } else {
+            colorClass = 'text-trade-down';
+        }
     }
     
     return (
